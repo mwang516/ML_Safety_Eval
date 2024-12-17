@@ -6,11 +6,26 @@ from openai import OpenAI
 from transformers import pipeline
 from huggingface_hub import login
 from collections import defaultdict
+from dotenv import load_dotenv
 
-# Need to figure out a way to store safely (using .env)
-os.environ["GITHUB_TOKEN"] = "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"
-os.environ["OPENAI_API_KEY"] = "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"
-login("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")
+# Create a .env file dynamically
+env_content = """
+GITHUB_TOKEN=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
+OPENAI_API_KEY=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
+HF_TOKEN=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
+"""
+
+# Write the content to a .env file
+with open(".env", "w") as env_file:
+    env_file.write(env_content)
+
+# Load environment variables from the .env file
+load_dotenv()
+
+# Access the environment variables securely
+os.environ["GITHUB_TOKEN"] = os.getenv("GITHUB_TOKEN")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+hf_token = os.getenv("HF_TOKEN")
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Requirements for Llama Guard which cannot be run due to hardware limitations
