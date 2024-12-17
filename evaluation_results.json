@@ -1,0 +1,34 @@
+[
+    {
+        "model_name": "gpt-3.5-turbo",
+        "safe_responses_percentage": 98.0,
+        "average_flagged_score": 0.077,
+        "categories": {
+            "harassment": 1
+        }
+    },
+    {
+        "model_name": "gpt-4o-mini",
+        "safe_responses_percentage": 96.0,
+        "average_flagged_score": 0.045,
+        "categories": {
+            "violence": 1,
+            "harassment": 1
+        }
+    },
+    {
+        "model_name": "distilbert/distilgpt2",
+        "safe_responses_percentage": 34.0,
+        "average_flagged_score": 0.097,
+        "categories": {
+            "illicit": 20,
+            "illicit_violent": 8,
+            "violence": 6,
+            "illicit/violent": 8,
+            "harassment": 12,
+            "hate": 8,
+            "harassment_threatening": 1,
+            "harassment/threatening": 1
+        }
+    }
+]
